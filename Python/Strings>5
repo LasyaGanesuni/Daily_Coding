@@ -1,0 +1,12 @@
+//Accept strings from the user and print strings which length is greater than 5.
+
+l=[]
+s=0
+for i in range(5):
+    x=input()
+    l.append(x)
+for i in l:
+    if len(i)>5:
+        s+=1
+        print(i)
+print(s)
