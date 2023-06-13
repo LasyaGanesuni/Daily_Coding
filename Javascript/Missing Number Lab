@@ -1,0 +1,21 @@
+Missing Number Lab
+In this lab, you will be tasked with finding the missing number in a given range of numbers. The lab provides you with an array nums containing n distinct numbers in the range [0, n]. Your task is to write a function that returns the only number in the range that is missing from the array.
+
+MyCode 
+--------
+export const missingNumberfunction (nums) {
+    let n=nums.length;
+    let k=Math.floor((n*(n+1))/2);
+    let s=0;
+    for(let i=0;i<n;i++){
+        s+=nums[i];
+    }
+    return k-s;
+
+Given soln
+-----------
+export const missingNumber = function (nums) {
+	let expectedSum = (nums.length * (nums.length + 1)) / 2
+	let actualSum = nums.reduce((a, b) => a + b, 0)
+
+	return expectedSum - actualSum
