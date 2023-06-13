@@ -1,0 +1,23 @@
+Given an array of size N-1 such that it only contains distinct integers in the range of 1 to N. Find the missing element.
+MyCode
+-----------
+class Solution:
+    def missingNumber(self,a,n):
+        # code here
+        a=list(a)
+        k=(n*(n+1))/2
+        p=k-sum(a)
+        return int(p)
+
+other soln
+-------------
+Approach 3 (Using Cyclic Sort): The idea behind it is as follows:
+
+All the given array numbers are sorted and in the range of 1 to n-1. If the range is 1 to N  then the index of every array element will be the same as (value - 1).
+
+Follow the below steps to implement the idea:
+
+Use cyclic sort to sort the elements in linear time.
+Now traverse from i = 0 to the end of the array:
+If arr[i] is not the same as i+1 then the missing element is (i+1).
+If all elements are present then N is the missing element in the range [1, N].
